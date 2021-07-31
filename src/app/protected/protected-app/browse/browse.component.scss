@@ -1,6 +1,4 @@
 .browse-container {
-  padding-bottom: 5rem;
-
   .billboard-image-container {
     position: relative;
     .billboard-img {
@@ -152,6 +150,64 @@
 
     section + section {
       margin-top: 3rem;
+    }
+  }
+
+  footer {
+    max-width: 980px;
+    padding: 0 0 2rem;
+    margin: 5rem auto 0;
+    font-family: "Netflix Sans Light";
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.8rem;
+
+    .socials {
+      font-size: 2rem;
+      display: flex;
+      gap: 1.5rem;
+      margin-bottom: 1rem;
+
+      i {
+        &:hover {
+          cursor: pointer;
+          color: white;
+        }
+      }
+    }
+
+    .footer-links {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+
+      li {
+        cursor: pointer;
+
+        &:hover {
+          text-decoration: underline;
+          color: white;
+        }
+      }
+    }
+
+    .service-links {
+      margin-bottom: 1rem;
+      display: flex;
+
+      a {
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        padding: 0.5rem;
+
+        &:hover {
+          color: white;
+          border-color: rgba(255, 255, 255, 1);
+        }
+      }
+    }
+
+    .copyright {
+      font-size: 0.85em;
     }
   }
 }
