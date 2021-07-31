@@ -62,14 +62,114 @@ header {
       }
 
       .user-icon-container {
-        display: flex;
-        align-items: center;
+        position: relative;
 
-        img {
+        .user-avatar {
           width: 35px;
           height: 35px;
           border-radius: 4px;
-          margin-right: 0.75em;
+        }
+
+        .action-trigger {
+          display: flex;
+          align-items: center;
+
+          .active-user-avatar {
+            margin-right: 0.75em;
+          }
+
+          i {
+            transition: all 0.3s ease;
+          }
+        }
+
+        &:hover {
+          .action-trigger {
+            i {
+              transform: rotate(180deg);
+            }
+          }
+          .action-target {
+            display: block;
+          }
+        }
+
+        .action-target .action-target-wrapper {
+          width: 200px;
+
+          &::before {
+            right: 28px;
+          }
+
+          a:hover {
+            text-decoration: underline;
+          }
+
+          section {
+            padding: 0.7rem;
+          }
+
+          .user-list {
+            li {
+              a {
+                display: flex;
+                align-items: center;
+                gap: 0.7rem;
+              }
+            }
+
+            li + li {
+              margin-top: 0.7rem;
+            }
+          }
+
+          .manage-profiles {
+            padding: 0.7rem 0;
+            display: block;
+          }
+
+          section.available-users {
+            padding-bottom: 0;
+          }
+
+          section.nf-user-common-actions {
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+
+            li + li {
+              margin-top: 0.5rem;
+            }
+
+            a {
+              display: block;
+              font-size: 0.8rem;
+              font-family: "Netflix Sans Bold";
+            }
+          }
+        }
+      }
+
+      .action-target {
+        position: absolute;
+        top: 35px;
+        padding-top: 16px;
+        right: 0;
+        display: none;
+
+        .action-target-wrapper {
+          position: relative;
+          background-color: rgba(0, 0, 0, 0.9);
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          border-radius: 4px;
+          &::before {
+            content: "";
+            position: absolute;
+            top: -15px;
+            right: 0;
+            border: 7px solid rgba(255, 255, 255, 1);
+            border-top-color: transparent;
+            border-left-color: transparent;
+            border-right-color: transparent;
+          }
         }
       }
     }
