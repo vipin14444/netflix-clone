@@ -108,12 +108,50 @@
         margin-bottom: 0.75rem;
         display: flex;
         align-items: center;
+        cursor: pointer;
+        width: fit-content;
 
-        i {
-          font-size: 0.95rem;
-          height: 100%;
-          padding-top: 2px;
-          margin-left: 0.3rem;
+        .chevron-container {
+          display: flex;
+          align-items: center;
+          padding: 2px 0.3rem 0;
+          opacity: 0;
+          transition: opacity 0.3s ease;
+
+          span {
+            font-size: 0.75rem;
+            display: inline-flex;
+            transform: translateX(-1rem);
+            opacity: 0;
+            width: 0;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            margin: 0;
+          }
+
+          i {
+            font-size: 0.95rem;
+            height: 100%;
+          }
+        }
+
+        &:hover {
+          .chevron-container {
+            span {
+              transform: translateX(0);
+              opacity: 1;
+              width: 62px;
+              margin: 0 0.3rem;
+            }
+          }
+        }
+      }
+
+      &:hover {
+        .title {
+          .chevron-container {
+            opacity: 1;
+          }
         }
       }
 
