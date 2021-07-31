@@ -51,7 +51,14 @@ header {
       margin-left: auto;
       display: flex;
       align-items: center;
-      gap: 2rem;
+
+      .user-action {
+        padding: 0 1rem;
+        height: 35px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
 
       > * {
         cursor: pointer;
@@ -61,8 +68,81 @@ header {
         font-size: 1.25rem;
       }
 
+      .notifications-container {
+        position: relative;
+        .action-target {
+          width: 400px;
+          font-size: 1rem;
+
+          .action-target-wrapper {
+            &::before {
+              right: 16px;
+            }
+
+            .notifications-list {
+              max-height: 345px;
+              overflow: auto;
+
+              .notification-one {
+                padding: 0.7rem;
+                display: flex;
+                gap: 0.7rem;
+
+                img {
+                  border-radius: 4px;
+                }
+
+                .notification-meta {
+                  display: flex;
+                  flex-direction: column;
+                  color: rgba(255, 255, 255, 0.75);
+
+                  .notification-title {
+                    font-size: 0.9rem;
+                  }
+
+                  .notification-date {
+                    margin-top: auto;
+                    font-size: 0.75rem;
+                    font-family: "Netflix Sans Light";
+                  }
+                }
+
+                &:hover {
+                  background-color: black;
+                  .notification-meta {
+                    color: white;
+                  }
+                }
+              }
+
+              .notification-one:first-child {
+                border-top-left-radius: 4px;
+                border-top-right-radius: 4px;
+              }
+
+              .notification-one:last-child {
+                border-bottom-left-radius: 4px;
+                border-bottom-right-radius: 4px;
+              }
+
+              .notification-one + .notification-one {
+                border-top: 1px solid rgba(255, 255, 255, 0.2);
+              }
+            }
+          }
+        }
+
+        &:hover {
+          .action-target {
+            display: block;
+          }
+        }
+      }
+
       .user-icon-container {
         position: relative;
+        margin-left: 1rem;
 
         .user-avatar {
           width: 35px;

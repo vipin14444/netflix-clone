@@ -1,4 +1,9 @@
 .browse-container {
+  img {
+    pointer-events: none;
+    user-select: none;
+  }
+
   .billboard-image-container {
     position: relative;
     .billboard-img {
@@ -178,6 +183,7 @@
           background-color: white;
           color: black;
           flex-shrink: 0;
+          cursor: pointer;
 
           img {
             width: 100%;
